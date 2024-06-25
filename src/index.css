@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities{
+    .nav{
+        @apply inline-block relative
+    }
+    .nav::after{
+        @apply content-[''] h-[3px] w-0 bg-btn_color absolute -bottom-[0.01rem] rounded-lg left-0 transition-all duration-300
+    }
+    .nav::after:hover{
+        @apply w-full
+    }
+    .nav::after:focus{
+        @apply w-full
+    }
+    
+    .text-underline{
+        @apply inline-block relative
+    }
+    .text-underline::after{
+        @apply content-[''] h-1 w-3/4 bg-btn_color absolute -bottom-[0.4rem] left-0
+    }
+    
+    .style-notfound{
+        animation: animate 10s ease-in-out infinite;
+        background: linear-gradient(-60deg, #71b7e6, #646cff, #b98acc, #f6a7c1, #f7b7a3, #f6d365, #f3f3a6);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+
+    }
+    @keyframes animate {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
